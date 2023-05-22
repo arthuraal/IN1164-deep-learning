@@ -4,7 +4,6 @@ import random
 import openai
 import tiktoken
 from datasets import load_dataset
-from p_tqdm import p_map
 from tenacity import (
     retry,
     stop_after_attempt,
@@ -108,7 +107,7 @@ if __name__ == '__main__':
         lambda example: example['question'] not in few_shot_examples['question']
     )
     initial_idx = 0
-    final_idx = 2500
+    final_idx = 1000
     generate_rationales(cot_dataset['train'].select(range(initial_idx, final_idx)), few_shot_examples, 
                         f"../data/rationales_generated_by_chatgpt_{initial_idx}_{final_idx}.jsonl")
     
