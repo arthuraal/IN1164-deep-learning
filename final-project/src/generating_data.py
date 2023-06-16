@@ -12,7 +12,7 @@ from tenacity import (
 from tqdm.auto import tqdm
 
 # API keys
-openai.api_key = "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"
+openai.api_key = ""
 random.seed(2)
 
 
